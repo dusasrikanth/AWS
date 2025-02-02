@@ -3,7 +3,7 @@
 #### Restrict access to the dev1-files folder (prefix) within the isrikanthd5364 S3 bucket only to the IAM user dev1, allowing the user to upload, download, delete, and list files within that specific folder, while denying access to any other part of the bucket.
 
 
-### Note: Below solution can be improved in terms of security by adding specifics but this blog is only to understand the concept :smile:
+#### Note: Below solution can be improved in terms of security by adding specifics but this blog is only to understand the concept. 🙂
 
 ## Solution and Explanation:
 
