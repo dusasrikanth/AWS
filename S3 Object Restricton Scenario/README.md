@@ -31,6 +31,9 @@
         }
     ]
 }
+```
+
+#### A two-layered approach using a bucket policy and an access point policy.  Here's how they work together:
 
 #### This S3 bucket policy defines access permissions for the `isrikanthd5364` bucket.
 
@@ -49,6 +52,7 @@
     *   `"StringEquals": { "s3:DataAccessPointAccount": "084828562044" }` This condition states that the policy *only* applies if the request to access the S3 bucket is made through an access point that belongs to the AWS account `084828562044`.  This is the key to how access is controlled.  Even though the `Principal` is `*`, the condition restricts access to only requests coming through a specific access point.
 
 In summary, this policy says:  *Anyone* is *potentially* allowed to perform *any* S3 action on the `isrikanthd5364` bucket and its objects, *but only if* the request originates from an access point that belongs to the AWS account `084828562044`.  This effectively means that access to the bucket is restricted to those using a specifically configured access point.
+
 
 2. Access Point Policy (Fine-Grained Permissions):
 
@@ -90,6 +94,7 @@ In summary, this policy says:  *Anyone* is *potentially* allowed to perform *any
         }
     ]
 }
+```
 
 *   **`Principal: { "AWS": "arn:aws:iam::084828562044:user/dev1" }`:** This grants permissions *only* to the `dev1` IAM user.
 
