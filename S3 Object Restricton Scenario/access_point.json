@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowObjectAccess",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::084828562044:user/dev1"
+            },
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:PutObjectAcl",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:ap-south-1:084828562044:accesspoint/dev1-ap/object/dev1-files/*"
+        },
+        {
+            "Sid": "AllowListBucket",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::084828562044:user/dev1"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:ap-south-1:084828562044:accesspoint/dev1-ap",
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": [
+                        "dev1-files/*",
+                        "dev1-files/"
+                    ]
+                }
+            }
+        }
+    ]
+}
