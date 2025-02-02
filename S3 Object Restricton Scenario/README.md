@@ -35,7 +35,7 @@
 This S3 bucket policy defines access permissions for the `isrikanthd5364` bucket.
 
 
-*   **`Effect`:** `"Allow"` indicates that this statement grants permission.
+####   **`Effect`:** `"Allow"` indicates that this statement grants permission.
 
 *   **`Principal`:** `{ "AWS": "*" }`  specifies *who* is granted the permission.  `"*"` means *all* AWS principals. This includes all AWS accounts, users, roles, and even anonymous users.  It's important to note that this `Principal` alone *does not* grant access. The `Condition` element is what actually restricts who can use this permission.
 
