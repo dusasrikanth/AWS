@@ -1,4 +1,4 @@
-## Delete unattached EBS volumes using event bridge and lambda function
+## Delete unattached EBS volumes using EventBridge and lambda function
 
 ### Prerequisites
 * An IAM role with EC2FullAccess.
